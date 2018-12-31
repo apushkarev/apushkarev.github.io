@@ -1,9 +1,9 @@
 :root {
 	--primary: #5ce5b3;
 	--text: #dce5e5;
-	--background: #1f2226;
-	--background-elevated: #2a2e33;
-	--color-highlight: #5e6e73;
+	--background: #222426;
+	--background-elevated: #2e3033;
+	--color-highlight: #677073;
 
 	/* These should be less important: */
 	--background-hover: rgba(255, 255, 255, 0.1);
@@ -20,7 +20,7 @@
 	--scrollbar-background: rgb(120, 120, 120);
 	--scrollbar-border: rgb(120, 120, 120);
 
-	--active-icon: rgb(43, 107, 149);
+	--active-icon: #46b089;
 }
 
 h1, h2, h3, h4 {
