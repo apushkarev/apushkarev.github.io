@@ -1,16 +1,16 @@
 :root {
 	--primary: #5ce5b3;
 	--text: #dce5e5;
-	--background: #222426;
-	--background-elevated: #2e3033;
-	--color-highlight: #677073;
+	--background: #242526;
+	--background-elevated: #303133;
+	--color-highlight: #6d7173;
 
 	/* These should be less important: */
 	--background-hover: rgba(255, 255, 255, 0.1);
 	--background-light: #AAA;
 	--background-bright: #FFF;
 
-	--border-dim: rgba(255, 255, 255, 0.1);
+	--border-dim: rgba(255, 255, 255, 0.05);
 	--border-bright: rgba(255, 255, 255, 0.1);
 
 	--text-bright: #FFF;
