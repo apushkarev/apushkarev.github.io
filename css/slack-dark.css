@@ -82,6 +82,14 @@ body:not(.loading) #team_menu:active {
 	color: var(--text) !important;
 }
 
+.channel_header_icon, #im_title, #im_title.away, .subtle_silver {
+	color: var(--text);
+}
+
+* {
+	text-shadow: 0.7px 0.7px 0 rgba(0, 0, 0, 0.25);
+}
+
 .channel_header .blue_on_hover:hover {
 	color: var(--primary) !important;
 }
