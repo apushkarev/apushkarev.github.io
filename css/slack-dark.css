@@ -1,8 +1,8 @@
 :root {
 	--primary: #5ce5b3;
 	--text: #dce5e5;
-	--background: #242424;
-	--background-elevated: #303030;
+	--background: #2d2d2d;
+	--background-elevated: #333;
 	--color-highlight: #6d7173;
 
 	/* These should be less important: */
