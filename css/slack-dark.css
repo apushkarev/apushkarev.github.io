@@ -1,8 +1,8 @@
 :root {
 	--primary: #5ce5b3;
 	--text: #dce5e5;
-	--background: #242526;
-	--background-elevated: #303133;
+	--background: #2424;
+	--background-elevated: #3030;
 	--color-highlight: #6d7173;
 
 	/* These should be less important: */
@@ -15,7 +15,7 @@
 
 	--text-bright: #FFF;
 	--text-special: var(--primary);
-	--text-grey: #717274;
+	--text-grey: #727272;
 
 	--scrollbar-background: rgb(120, 120, 120);
 	--scrollbar-border: rgb(120, 120, 120);
@@ -80,25 +80,6 @@ body:not(.loading) #team_menu:active {
 .p-channel_sidebar__channel:hover,
 .p-channel_sidebar__link:hover {
 	color: var(--text) !important;
-}
-
-.channel_header_icon, #im_title, #im_title.away, .subtle_silver {
-	color: var(--text);
-}
-
-* {
-	text-shadow: 0.7px 0.7px 0 rgba(0, 0, 0, 0.25);
-}
-
-.channel_header .blue_on_hover:hover {
-	color: var(--primary) !important;
-}
-
-.sidebar_menu_list_item.is_active {
-    background-color: var(--active-icon);
-    border-color: var(--active-icon);
-
-    text-shadow: 0 1px 0 rgba(0,0,0,.1);
 }
 
 /* Channel with unread messages */
@@ -1863,4 +1844,25 @@ ts-jumper .p-jumper__help {
 	to {
 		background: transparent
 	}
+}
+
+/* CUSTOM */
+
+.channel_header_icon, #im_title, #im_title.away, .subtle_silver {
+	color: var(--text);
+}
+
+* {
+	text-shadow: 0.7px 0.7px 0 rgba(0, 0, 0, 0.25);
+}
+
+.channel_header .blue_on_hover:hover {
+	color: var(--primary) !important;
+}
+
+.sidebar_menu_list_item.is_active {
+    background-color: var(--active-icon);
+    border-color: var(--active-icon);
+
+    text-shadow: 0 1px 0 rgba(0,0,0,.1);
 }
