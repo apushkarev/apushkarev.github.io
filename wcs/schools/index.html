@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Где учиться West Coast Swing</title>
+  <meta name="description" content="Школы West Coast Swing в России и соседних странах: сайты и соцсети по городам.">
+  <meta name="theme-color" content="#262c66">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Где учиться West Coast Swing">
+  <meta property="og:description" content="Школы West Coast Swing по городам">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=Unbounded:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/wcs.css">
+</head>
+<body>
+  <header class="site-nav">
+    <nav class="site-nav__links" aria-label="Разделы">
+      <a href="./" aria-current="page">Школы</a>
+      <a href="../calendar/">Фестивали</a>
+      <a href="https://t.me/late_night_media" target="_blank" rel="noopener">Late Night Media<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="page__inner">
+      <div class="page-head__text">
+        <p class="eyebrow">Школы</p>
+        <h1 class="page-title">Где учиться West Coast Swing</h1>
+      </div>
+
+      <div class="chips" id="city-filter" role="group" aria-label="Фильтр по городу"></div>
+      <div class="cities" id="city-list"></div>
+      <noscript><p class="lead">Чтобы увидеть список школ, включите JavaScript.</p></noscript>
+
+      <div class="center-row">
+        <a class="link-arrow" href="https://t.me/late_night_wcs/53" target="_blank" rel="noopener">Дополнить список<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    /*
+      Список школ. Чтобы добавить школу — допишите строку в нужный город,
+      чтобы добавить город — скопируйте блок { id, name, schools }.
+        site('https://…')  — сайт
+        tg('handle')       — Telegram по нику, или tg('https://t.me/…') по ссылке
+        vk('https://…')    — ВКонтакте
+      country — необязательно, для городов за пределами России.
+    */
+    const site = (href) => ({ label: 'Сайт', href });
+    const tg = (handle) => ({ label: 'Telegram', href: handle.startsWith('http') ? handle : `https://t.me/${handle}` });
+    const vk = (href) => ({ label: 'VK', href });
+    const galla = () => ({ name: 'GallaDance', links: [site('https://www.galladance.com/'), vk('https://m.vk.com/galladance')] });
+
+    const CITIES = [
+      { id: 'msk', name: 'Москва', schools: [
+        { name: 'ЛисоБорье', links: [site('https://lisoborie.ru/'), tg('lisoborie'), vk('https://vk.ru/lisoborie')] },
+        { name: 'IVARA', links: [site('https://ivara.ru/51-napravleniya/west-coast-swing.html'), tg('ivaraparty'), vk('https://vk.ru/ivara')] },
+        galla(),
+      ] },
+      { id: 'spb', name: 'Санкт-Петербург', schools: [
+        { name: 'Дом WCS', links: [site('https://wcshome.ru/'), tg('domwcs'), vk('https://vk.ru/wcs_spb')] },
+        { name: 'MMDance', links: [site('https://mmdance-spb.ru/'), tg('mmdance_studio_spb'), vk('https://m.vk.ru/mmdance_spb')] },
+        { name: 'Rock’n’Roll Jokers', links: [site('https://rockandroll.ru/'), tg('rock_n_roll_jokers'), vk('https://vk.ru/rrj_boogie_lindy')] },
+        galla(),
+      ] },
+      { id: 'vvo', name: 'Владивосток', schools: [
+        { name: 'WCS Vladivostok', links: [vk('https://vk.ru/wcs_vladivostok')] },
+      ] },
+      { id: 'kzn', name: 'Казань', schools: [
+        { name: 'Studio SODAS', links: [vk('https://vk.ru/sodas_dance')] },
+      ] },
+      { id: 'nnov', name: 'Нижний Новгород', schools: [
+        galla(),
+      ] },
+      { id: 'nsk', name: 'Новосибирск', schools: [
+        { name: 'Вираж', links: [site('https://viragestudio.ru/'), vk('https://vk.ru/virage_nsk')] },
+        { name: 'Ипанема', links: [vk('https://vk.ru/ipanemansk')] },
+      ] },
+      { id: 'perm', name: 'Пермь', schools: [
+        galla(),
+      ] },
+      { id: 'sam', name: 'Самара', schools: [
+        { name: 'Американо', links: [vk('https://vk.ru/americanodance')] },
+      ] },
+      { id: 'tver', name: 'Тверь', schools: [
+        { name: 'WCS.tver', links: [tg('wcs_tver')] },
+      ] },
+      { id: 'tomsk', name: 'Томск', schools: [
+        { name: 'Импульс', links: [vk('https://vk.ru/impulse.tomsk')] },
+      ] },
+      { id: 'tmn', name: 'Тюмень', schools: [
+        galla(),
+      ] },
+      { id: 'ufa', name: 'Уфа', schools: [
+        { name: 'WCS Уфа', links: [vk('https://vk.ru/wcsufa'), tg('https://t.me/+m_IoOhjqYgU3MjMy')] },
+      ] },
+      { id: 'yar', name: 'Ярославль', schools: [
+        { name: 'WCS Ярославль', links: [tg('wcs_yar')] },
+      ] },
+      { id: 'minsk', name: 'Минск', country: 'Беларусь', schools: [
+        { name: 'A-class', links: [site('https://tancuem.by/'), vk('https://vk.ru/tancuemby')] },
+      ] },
+      { id: 'evn', name: 'Ереван', country: 'Армения', schools: [
+        { name: 'WCS Yerevan', links: [site('https://wcs.am/ru/')] },
+        { name: 'wcs.point_yvn', links: [] },
+      ] },
+    ];
+
+    const PIN_ICON = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
+
+    const plural = (n, one, few, many) => {
+      const m10 = n % 10, m100 = n % 100;
+      if (m10 === 1 && m100 !== 11) return one;
+      if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few;
+      return many;
+    };
+
+    const el = (tag, className, text) => {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text != null) node.textContent = text;
+      return node;
+    };
+
+    const filterEl = document.getElementById('city-filter');
+    const listEl = document.getElementById('city-list');
+
+    function renderCity(city) {
+      const card = el('article', 'city');
+      const head = el('div', 'city__head');
+      const title = el('div', 'city__title');
+      title.insertAdjacentHTML('beforeend', PIN_ICON);
+      title.append(el('h2', 'city__name', city.name));
+      if (city.country) title.append(el('span', 'city__country', city.country));
+      const count = city.schools.length;
+      head.append(title, el('span', 'city__count', `${count} ${plural(count, 'школа', 'школы', 'школ')}`));
+      card.append(head);
+
+      for (const school of city.schools) {
+        const row = el('div', 'school');
+        row.append(el('span', 'school__name', school.name));
+        if (school.links.length) {
+          const links = el('div', 'school__links');
+          for (const link of school.links) {
+            const a = el('a', null, link.label);
+            a.href = link.href;
+            a.target = '_blank';
+            a.rel = 'noopener';
+            a.setAttribute('aria-label', `${link.label} — ${school.name}`);
+            links.append(a);
+          }
+          row.append(links);
+        }
+        card.append(row);
+      }
+      return card;
+    }
+
+    function showCity(id) {
+      for (const chip of filterEl.children) {
+        chip.setAttribute('aria-pressed', String(chip.dataset.city === id));
+      }
+      const shown = id === 'all' ? CITIES : CITIES.filter((city) => city.id === id);
+      listEl.replaceChildren(...shown.map(renderCity));
+    }
+
+    const total = CITIES.reduce((sum, city) => sum + city.schools.length, 0);
+    const options = [{ id: 'all', name: 'Все города', count: total }]
+      .concat(CITIES.map((city) => ({ id: city.id, name: city.name, count: city.schools.length })));
+
+    for (const option of options) {
+      const chip = el('button', 'chip', option.name);
+      chip.type = 'button';
+      chip.dataset.city = option.id;
+      chip.append(el('span', 'chip__count', String(option.count)));
+      chip.addEventListener('click', () => showCity(option.id));
+      filterEl.append(chip);
+    }
+
+    showCity('all');
+  </script>
+</body>
+</html>
