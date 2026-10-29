@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Где танцевать West Coast Swing</title>
+  <meta name="description" content="Регулярные вечеринки West Coast Swing в России и соседних странах: расписание и ссылки по городам.">
+  <meta name="theme-color" content="#262c66">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Где танцевать West Coast Swing">
+  <meta property="og:description" content="Вечеринки West Coast Swing по городам">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=Unbounded:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/wcs.css">
+  <script src="../assets/nav.js" defer></script>
+</head>
+<body>
+  <header class="site-nav">
+    <nav class="site-nav__links" aria-label="Разделы">
+      <div class="site-nav__menu" id="site-menu">
+        <a href="../">Главная</a>
+        <a href="../schools/">Школы</a>
+        <a href="./" aria-current="page">Вечеринки</a>
+        <a href="../calendar/">Фестивали</a>
+        <button class="site-nav__close" type="button" aria-label="Закрыть меню"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <a href="https://t.me/late_night_wcs" target="_blank" rel="noopener">Late Night Media<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      <button class="site-nav__toggle" type="button" aria-label="Меню" aria-expanded="false" aria-controls="site-menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="page__inner">
+      <div class="page-head__text">
+        <p class="eyebrow">Вечеринки</p>
+        <h1 class="page-title">Где танцевать West Coast Swing</h1>
+      </div>
+
+      <div class="chips" id="city-filter" role="group" aria-label="Фильтр по городу"></div>
+      <div class="cities" id="city-list"></div>
+      <noscript><p class="lead">Чтобы увидеть список вечеринок, включите JavaScript.</p></noscript>
+
+      <div class="center-row">
+        <a class="link-arrow" href="https://t.me/late_night_wcs/56" target="_blank" rel="noopener">Дополнить список<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    /*
+      Список вечеринок лежит в parties.json рядом с этой страницей.
+      Город: { "id", "name", "country" (необязательно), "parties": [...] }
+      Вечеринка: { "name", "schedule", "styles" (необязательно, ["хастл", "вкс"]),
+                   "links": [{ "label": "Telegram", "href": "https://…" }, …] }
+    */
+    const PIN_ICON = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
+
+    const plural = (n, one, few, many) => {
+      const m10 = n % 10, m100 = n % 100;
+      if (m10 === 1 && m100 !== 11) return one;
+      if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few;
+      return many;
+    };
+
+    const esc = (value) => String(value).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+
+    const filterEl = document.getElementById('city-filter');
+    const listEl = document.getElementById('city-list');
+    let cities = [];
+
+    const chipHTML = (id, name, count) => `
+      <button type="button" class="chip" data-city="${esc(id)}" aria-pressed="false">${esc(name)}<span class="chip__count">${count}</span></button>`;
+
+    const linkHTML = (link, party) => `
+      <a href="${esc(link.href)}" target="_blank" rel="noopener" aria-label="${esc(link.label)} — ${esc(party.name)}">${esc(link.label)}</a>`;
+
+    const metaHTML = (party) => {
+      const styles = (party.styles || []).map((style) => `<span class="party__style">${esc(style)}</span>`).join('');
+      if (!party.schedule && !styles) return '';
+      return `<span class="party__meta">${party.schedule ? esc(party.schedule) : ''}${styles}</span>`;
+    };
+
+    const partyHTML = (party) => `
+      <div class="party">
+        <div class="party__info">
+          <span class="party__name">${esc(party.name)}</span>
+          ${metaHTML(party)}
+        </div>
+        ${party.links.length ? `<div class="party__links">${party.links.map((link) => linkHTML(link, party)).join('')}</div>` : ''}
+      </div>`;
+
+    const cityHTML = (city) => `
+      <article class="city">
+        <div class="city__head">
+          <div class="city__title">
+            ${PIN_ICON}
+            <h2 class="city__name">${esc(city.name)}</h2>
+            ${city.country ? `<span class="city__country">${esc(city.country)}</span>` : ''}
+          </div>
+          <span class="city__count">${city.parties.length} ${plural(city.parties.length, 'вечеринка', 'вечеринки', 'вечеринок')}</span>
+        </div>
+        ${city.parties.map(partyHTML).join('')}
+      </article>`;
+
+    function showCity(id) {
+      for (const chip of filterEl.children) {
+        chip.setAttribute('aria-pressed', String(chip.dataset.city === id));
+      }
+      const shown = id === 'all' ? cities : cities.filter((city) => city.id === id);
+      listEl.innerHTML = shown.map(cityHTML).join('');
+    }
+
+    filterEl.addEventListener('click', (event) => {
+      const chip = event.target.closest('.chip');
+      if (chip) showCity(chip.dataset.city);
+    });
+
+    fetch('parties.json')
+      .then((response) => response.json())
+      .then((data) => {
+        cities = data;
+        const total = cities.reduce((sum, city) => sum + city.parties.length, 0);
+        filterEl.innerHTML = chipHTML('all', 'Все города', total)
+          + cities.map((city) => chipHTML(city.id, city.name, city.parties.length)).join('');
+        showCity('all');
+      })
+      .catch(() => {
+        listEl.innerHTML = '<p class="lead">Не удалось загрузить список вечеринок. Обновите страницу.</p>';
+      });
+  </script>
+</body>
+</html>

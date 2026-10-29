@@ -15,13 +15,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=Unbounded:wght@500&display=swap">
   <link rel="stylesheet" href="../assets/wcs.css">
+  <script src="../assets/nav.js" defer></script>
 </head>
 <body>
   <header class="site-nav">
     <nav class="site-nav__links" aria-label="Разделы">
-      <a href="./" aria-current="page">Школы</a>
-      <a href="../calendar/">Фестивали</a>
+      <div class="site-nav__menu" id="site-menu">
+        <a href="../">Главная</a>
+        <a href="./" aria-current="page">Школы</a>
+        <a href="../parties/">Вечеринки</a>
+        <a href="../calendar/">Фестивали</a>
+        <button class="site-nav__close" type="button" aria-label="Закрыть меню"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
       <a href="https://t.me/late_night_wcs" target="_blank" rel="noopener">Late Night Media<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      <button class="site-nav__toggle" type="button" aria-label="Меню" aria-expanded="false" aria-controls="site-menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </nav>
   </header>
 

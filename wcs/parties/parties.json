@@ -1,0 +1,245 @@
+[
+  {
+    "id": "msk",
+    "name": "Москва",
+    "parties": [
+      {
+        "name": "Вечеринка в ЛисоБорье",
+        "links": [
+          {
+            "label": "Telegram",
+            "href": "https://t.me/lisoborie"
+          }
+        ],
+        "schedule": "каждую пятницу"
+      },
+      {
+        "name": "Sugar Party",
+        "links": [
+          {
+            "label": "Telegram",
+            "href": "https://t.me/wcs_sugar_party"
+          }
+        ],
+        "schedule": "раз в месяц по субботам"
+      }
+    ]
+  },
+  {
+    "id": "spb",
+    "name": "Санкт-Петербург",
+    "parties": [
+      {
+        "name": "Мансарда",
+        "links": [
+          {
+            "label": "VK",
+            "href": "https://vk.ru/partywcs"
+          }
+        ],
+        "schedule": "каждую пятницу"
+      },
+      {
+        "name": "Вафлиемская вечеринка в RRJ",
+        "links": [
+          {
+            "label": "Telegram",
+            "href": "https://t.me/wcswaffle"
+          }
+        ],
+        "schedule": "дважды в месяц по воскресеньям"
+      },
+      {
+        "name": "Вечеринка в Доме WCS",
+        "links": [
+          {
+            "label": "Telegram",
+            "href": "https://t.me/domwcs"
+          }
+        ],
+        "schedule": "дважды в месяц по воскресеньям"
+      },
+      {
+        "name": "Вечеринка в MMDance",
+        "links": [
+          {
+            "label": "Telegram",
+            "href": "https://t.me/mmdance_studio_spb"
+          }
+        ],
+        "schedule": "по анонсу",
+        "styles": [
+          "хастл",
+          "вкс"
+        ]
+      },
+      {
+        "name": "Винегрет",
+        "links": [
+          {
+            "label": "VK",
+            "href": "https://vk.ru/vinaigrettedancepiter"
+          }
+        ],
+        "schedule": "раз в месяц по субботам",
+        "styles": [
+          "хастл",
+          "вкс"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "krd",
+    "name": "Краснодар",
+    "parties": [
+      {
+        "name": "WCS Краснодар",
+        "links": [
+          {
+            "label": "VK",
+            "href": "https://vk.ru/wcs.krd.group"
+          }
+        ],
+        "schedule": "по субботам раз в три недели"
+      }
+    ]
+  },
+  {
+    "id": "nsk",
+    "name": "Новосибирск",
+    "parties": [
+      {
+        "name": "Вечеринка в Вираже",
+        "links": [
+          {
+            "label": "Telegram",
+            "href": "https://t.me/lovedancevh"
+          }
+        ],
+        "schedule": "по анонсу",
+        "styles": [
+          "хастл",
+          "вкс"
+        ]
+      },
+      {
+        "name": "Вечеринка в Ипанема",
+        "links": [
+          {
+            "label": "VK",
+            "href": "https://vk.ru/ipanemansk"
+          }
+        ],
+        "schedule": "раз в месяц"
+      }
+    ]
+  },
+  {
+    "id": "sam",
+    "name": "Самара",
+    "parties": [
+      {
+        "name": "Вечеринка в Американо",
+        "links": [
+          {
+            "label": "VK",
+            "href": "https://vk.ru/americanodance"
+          }
+        ],
+        "schedule": "раз в неделю, пятница/суббота"
+      }
+    ]
+  },
+  {
+    "id": "tomsk",
+    "name": "Томск",
+    "parties": [
+      {
+        "name": "Вечеринка в Импульсе",
+        "links": [
+          {
+            "label": "VK",
+            "href": "https://vk.ru/impulse.tomsk"
+          }
+        ],
+        "schedule": "раз в две недели по субботам",
+        "styles": [
+          "хастл",
+          "вкс"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ufa",
+    "name": "Уфа",
+    "parties": [
+      {
+        "name": "Вечеринка в Чердаке",
+        "links": [
+          {
+            "label": "Telegram",
+            "href": "https://t.me/+m_IoOhjqYgU3MjMy"
+          }
+        ],
+        "schedule": "дважды в месяц"
+      }
+    ]
+  },
+  {
+    "id": "yar",
+    "name": "Ярославль",
+    "parties": [
+      {
+        "name": "WCS Ярославль",
+        "links": [
+          {
+            "label": "VK",
+            "href": "https://vk.ru/topic-230040365_53104168?offset=0"
+          }
+        ],
+        "schedule": "каждую пятницу"
+      }
+    ]
+  },
+  {
+    "id": "minsk",
+    "name": "Минск",
+    "country": "Беларусь",
+    "parties": [
+      {
+        "name": "WCS Минск",
+        "links": [
+          {
+            "label": "Telegram",
+            "href": "https://t.me/wcs_in_Minsk"
+          }
+        ],
+        "schedule": "по анонсу"
+      }
+    ]
+  },
+  {
+    "id": "evn",
+    "name": "Ереван",
+    "country": "Армения",
+    "parties": [
+      {
+        "name": "WCS Yerevan",
+        "links": [
+          {
+            "label": "Сайт",
+            "href": "https://wcs.am/ru/"
+          }
+        ],
+        "schedule": "раз в две недели по субботам"
+      },
+      {
+        "name": "wcs.point_yvn",
+        "links": [],
+        "schedule": "по анонсу"
+      }
+    ]
+  }
+]
