@@ -6,24 +6,48 @@
       {
         "name": "ЛисоБорье",
         "links": [
-          { "label": "Сайт", "href": "https://lisoborie.ru/" },
-          { "label": "Telegram", "href": "https://t.me/lisoborie" },
-          { "label": "VK", "href": "https://vk.ru/lisoborie" }
+          {
+            "label": "Сайт",
+            "href": "https://lisoborie.ru/"
+          },
+          {
+            "label": "Telegram",
+            "href": "https://t.me/lisoborie"
+          },
+          {
+            "label": "VK",
+            "href": "https://vk.ru/lisoborie"
+          }
         ]
       },
       {
         "name": "IVARA",
         "links": [
-          { "label": "Сайт", "href": "https://ivara.ru/51-napravleniya/west-coast-swing.html" },
-          { "label": "Telegram", "href": "https://t.me/ivaraparty" },
-          { "label": "VK", "href": "https://vk.ru/ivara" }
+          {
+            "label": "Сайт",
+            "href": "https://ivara.ru/51-napravleniya/west-coast-swing.html"
+          },
+          {
+            "label": "Telegram",
+            "href": "https://t.me/ivaraparty"
+          },
+          {
+            "label": "VK",
+            "href": "https://vk.ru/ivara"
+          }
         ]
       },
       {
         "name": "GallaDance",
         "links": [
-          { "label": "Сайт", "href": "https://www.galladance.com/" },
-          { "label": "VK", "href": "https://m.vk.com/galladance" }
+          {
+            "label": "Сайт",
+            "href": "https://www.galladance.com/"
+          },
+          {
+            "label": "VK",
+            "href": "https://m.vk.com/galladance"
+          }
         ]
       }
     ]
@@ -35,32 +59,65 @@
       {
         "name": "Дом WCS",
         "links": [
-          { "label": "Сайт", "href": "https://wcshome.ru/" },
-          { "label": "Telegram", "href": "https://t.me/domwcs" },
-          { "label": "VK", "href": "https://vk.ru/wcs_spb" }
+          {
+            "label": "Сайт",
+            "href": "https://wcshome.ru/"
+          },
+          {
+            "label": "Telegram",
+            "href": "https://t.me/domwcs"
+          },
+          {
+            "label": "VK",
+            "href": "https://vk.ru/wcs_spb"
+          }
         ]
       },
       {
         "name": "MMDance",
         "links": [
-          { "label": "Сайт", "href": "https://mmdance-spb.ru/" },
-          { "label": "Telegram", "href": "https://t.me/mmdance_studio_spb" },
-          { "label": "VK", "href": "https://m.vk.ru/mmdance_spb" }
+          {
+            "label": "Сайт",
+            "href": "https://mmdance-spb.ru/"
+          },
+          {
+            "label": "Telegram",
+            "href": "https://t.me/mmdance_studio_spb"
+          },
+          {
+            "label": "VK",
+            "href": "https://m.vk.ru/mmdance_spb"
+          }
         ]
       },
       {
         "name": "Rock’n’Roll Jokers",
         "links": [
-          { "label": "Сайт", "href": "https://rockandroll.ru/" },
-          { "label": "Telegram", "href": "https://t.me/rock_n_roll_jokers" },
-          { "label": "VK", "href": "https://vk.ru/rrj_boogie_lindy" }
+          {
+            "label": "Сайт",
+            "href": "https://rockandroll.ru/"
+          },
+          {
+            "label": "Telegram",
+            "href": "https://t.me/rock_n_roll_jokers"
+          },
+          {
+            "label": "VK",
+            "href": "https://vk.ru/rrj_boogie_lindy"
+          }
         ]
       },
       {
         "name": "GallaDance",
         "links": [
-          { "label": "Сайт", "href": "https://www.galladance.com/" },
-          { "label": "VK", "href": "https://m.vk.com/galladance" }
+          {
+            "label": "Сайт",
+            "href": "https://www.galladance.com/"
+          },
+          {
+            "label": "VK",
+            "href": "https://m.vk.com/galladance"
+          }
         ]
       }
     ]
@@ -72,7 +129,10 @@
       {
         "name": "WCS Vladivostok",
         "links": [
-          { "label": "VK", "href": "https://vk.ru/wcs_vladivostok" }
+          {
+            "label": "VK",
+            "href": "https://vk.ru/wcs_vladivostok"
+          }
         ]
       }
     ]
@@ -84,7 +144,25 @@
       {
         "name": "Studio SODAS",
         "links": [
-          { "label": "VK", "href": "https://vk.ru/sodas_dance" }
+          {
+            "label": "VK",
+            "href": "https://vk.ru/sodas_dance"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "krd",
+    "name": "Краснодар",
+    "schools": [
+      {
+        "name": "WCS Краснодар",
+        "links": [
+          {
+            "label": "VK",
+            "href": "https://vk.ru/wcs.krd.group"
+          }
         ]
       }
     ]
@@ -96,8 +174,14 @@
       {
         "name": "GallaDance",
         "links": [
-          { "label": "Сайт", "href": "https://www.galladance.com/" },
-          { "label": "VK", "href": "https://m.vk.com/galladance" }
+          {
+            "label": "Сайт",
+            "href": "https://www.galladance.com/"
+          },
+          {
+            "label": "VK",
+            "href": "https://m.vk.com/galladance"
+          }
         ]
       }
     ]
@@ -109,14 +193,23 @@
       {
         "name": "Вираж",
         "links": [
-          { "label": "Сайт", "href": "https://viragestudio.ru/" },
-          { "label": "VK", "href": "https://vk.ru/virage_nsk" }
+          {
+            "label": "Сайт",
+            "href": "https://viragestudio.ru/"
+          },
+          {
+            "label": "VK",
+            "href": "https://vk.ru/virage_nsk"
+          }
         ]
       },
       {
         "name": "Ипанема",
         "links": [
-          { "label": "VK", "href": "https://vk.ru/ipanemansk" }
+          {
+            "label": "VK",
+            "href": "https://vk.ru/ipanemansk"
+          }
         ]
       }
     ]
@@ -128,8 +221,14 @@
       {
         "name": "GallaDance",
         "links": [
-          { "label": "Сайт", "href": "https://www.galladance.com/" },
-          { "label": "VK", "href": "https://m.vk.com/galladance" }
+          {
+            "label": "Сайт",
+            "href": "https://www.galladance.com/"
+          },
+          {
+            "label": "VK",
+            "href": "https://m.vk.com/galladance"
+          }
         ]
       }
     ]
@@ -141,7 +240,25 @@
       {
         "name": "Американо",
         "links": [
-          { "label": "VK", "href": "https://vk.ru/americanodance" }
+          {
+            "label": "VK",
+            "href": "https://vk.ru/americanodance"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "simf",
+    "name": "Симферопль",
+    "schools": [
+      {
+        "name": "WCS Симферопль",
+        "links": [
+          {
+            "label": "VK",
+            "href": "https://vk.ru/wcssimferopol"
+          }
         ]
       }
     ]
@@ -153,7 +270,10 @@
       {
         "name": "WCS.tver",
         "links": [
-          { "label": "Telegram", "href": "https://t.me/wcs_tver" }
+          {
+            "label": "Telegram",
+            "href": "https://t.me/wcs_tver"
+          }
         ]
       }
     ]
@@ -165,7 +285,10 @@
       {
         "name": "Импульс",
         "links": [
-          { "label": "VK", "href": "https://vk.ru/impulse.tomsk" }
+          {
+            "label": "VK",
+            "href": "https://vk.ru/impulse.tomsk"
+          }
         ]
       }
     ]
@@ -177,8 +300,14 @@
       {
         "name": "GallaDance",
         "links": [
-          { "label": "Сайт", "href": "https://www.galladance.com/" },
-          { "label": "VK", "href": "https://m.vk.com/galladance" }
+          {
+            "label": "Сайт",
+            "href": "https://www.galladance.com/"
+          },
+          {
+            "label": "VK",
+            "href": "https://m.vk.com/galladance"
+          }
         ]
       }
     ]
@@ -190,8 +319,14 @@
       {
         "name": "WCS Уфа",
         "links": [
-          { "label": "VK", "href": "https://vk.ru/wcsufa" },
-          { "label": "Telegram", "href": "https://t.me/+m_IoOhjqYgU3MjMy" }
+          {
+            "label": "VK",
+            "href": "https://vk.ru/wcsufa"
+          },
+          {
+            "label": "Telegram",
+            "href": "https://t.me/+m_IoOhjqYgU3MjMy"
+          }
         ]
       }
     ]
@@ -203,7 +338,10 @@
       {
         "name": "WCS Ярославль",
         "links": [
-          { "label": "Telegram", "href": "https://t.me/wcs_yar" }
+          {
+            "label": "Telegram",
+            "href": "https://t.me/wcs_yar"
+          }
         ]
       }
     ]
@@ -216,8 +354,14 @@
       {
         "name": "A-class",
         "links": [
-          { "label": "Сайт", "href": "https://tancuem.by/" },
-          { "label": "VK", "href": "https://vk.ru/tancuemby" }
+          {
+            "label": "Сайт",
+            "href": "https://tancuem.by/"
+          },
+          {
+            "label": "VK",
+            "href": "https://vk.ru/tancuemby"
+          }
         ]
       }
     ]
@@ -230,7 +374,10 @@
       {
         "name": "WCS Yerevan",
         "links": [
-          { "label": "Сайт", "href": "https://wcs.am/ru/" }
+          {
+            "label": "Сайт",
+            "href": "https://wcs.am/ru/"
+          }
         ]
       },
       {
