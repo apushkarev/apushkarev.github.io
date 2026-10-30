@@ -138,6 +138,21 @@
     ]
   },
   {
+    "id": "ivanovo",
+    "name": "Иваново",
+    "schools": [
+      {
+        "name": "WCS Иваново",
+        "links": [
+          {
+            "label": "VK",
+            "href": "https://vk.ru/wcs_ivanovo"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "kzn",
     "name": "Казань",
     "schools": [
