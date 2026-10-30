@@ -51,7 +51,7 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-/* Sky: the light slowly swings, like a ride at night. */
+/* Sky. Static on purpose: animating this full-screen layer made the browser redraw every frame. */
 body::before {
   content: "";
   position: fixed;
@@ -65,9 +65,6 @@ body::before {
     radial-gradient(60% 40% at 30% 92%, rgba(138, 111, 179, 0.38), transparent 70%),
     radial-gradient(50% 40% at 8% 40%, rgba(70, 92, 190, 0.45), transparent 70%),
     linear-gradient(165deg, #2f3a86 0%, var(--indigo) 30%, var(--indigo-deep) 58%, #1b1630 80%, var(--night) 100%);
-  transform-origin: 60% -30%;
-  animation: swing 16s ease-in-out infinite alternate;
-  will-change: transform;
 }
 
 /* Film grain */
@@ -80,15 +77,6 @@ body::after {
   opacity: 0.28;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='2.6 0 0 0 -.8 2.6 0 0 0 -.8 2.6 0 0 0 -.8 0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-@keyframes swing {
-  from { transform: rotate(-3deg) translate3d(-1.5%, 0, 0); }
-  to   { transform: rotate(3deg) translate3d(1.5%, 0, 0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body::before { animation: none; }
 }
 
 /* Navbar: shared by every page, stays on top while scrolling. */
