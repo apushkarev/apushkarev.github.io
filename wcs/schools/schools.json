@@ -382,7 +382,12 @@
       },
       {
         "name": "wcs.point_yvn",
-        "links": []
+        "links": [
+          {
+            "label": "Telegram",
+            "href": "https://t.me/wcspoint_yvn"
+          }
+        ]
       }
     ]
   }
