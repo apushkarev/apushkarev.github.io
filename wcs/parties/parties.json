@@ -84,6 +84,22 @@
     ]
   },
   {
+    "id": "vld",
+    "name": "Владивосток",
+    "parties": [
+      {
+        "name": "WCS Владивосток",
+        "links": [
+          {
+            "label": "Telegram",
+            "href": "https://t.me/wcsvlnews"
+          }
+        ],
+        "schedule": "по субботам раз в две недели"
+      }
+    ]
+  },
+  {
     "id": "krd",
     "name": "Краснодар",
     "parties": [
