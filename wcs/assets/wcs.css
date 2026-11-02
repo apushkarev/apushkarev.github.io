@@ -385,6 +385,7 @@ body::after {
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(2px);
   color: var(--text);
   font: inherit;
   font-size: 15px;
@@ -434,6 +435,7 @@ body::after {
   border: 1px solid var(--glass-line);
   border-radius: 24px;
   background: var(--glass);
+  backdrop-filter: blur(2px);
 }
 
 .city__head {
