@@ -802,6 +802,25 @@ body::after {
   background: var(--neon);
 }
 
+/* Tips at the end of a section */
+.tips {
+  margin: 28px 0;
+  padding: 22px 24px 24px;
+  border: 1px solid var(--glass-line);
+  border-radius: 24px;
+  background: var(--glass);
+  backdrop-filter: blur(2px);
+}
+
+.article__section .tips h3 { margin: 0 0 14px; }
+
+.tips .bullets { margin: 0; }
+
+.tips .bullets li {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 .examples {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -853,6 +872,7 @@ body::after {
   .article-link svg { top: 18px; right: 18px; }
 
   .terms { padding: 4px 18px; border-radius: 20px; }
+  .tips { padding: 18px 18px 20px; border-radius: 20px; }
   .terms__row { grid-template-columns: 1fr; }
   .ladder { grid-template-columns: repeat(2, 1fr); }
   .examples { grid-template-columns: 1fr; }
