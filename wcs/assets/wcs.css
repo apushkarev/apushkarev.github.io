@@ -737,12 +737,22 @@ body::after {
   text-wrap: pretty;
 }
 
+/* A description longer than one paragraph */
+.terms dd p {
+  margin: 0 0 10px;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.terms dd p:last-child { margin-bottom: 0; }
+
 /* FAQ: each question above its answer */
 .faq .terms__row { grid-template-columns: 1fr; }
 
 .ladder,
 .bullets,
-.examples {
+.examples,
+.steps {
   margin: 0 0 24px;
   padding: 0;
   list-style: none;
@@ -802,6 +812,11 @@ body::after {
   background: var(--neon);
 }
 
+.bullets strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 /* Tips at the end of a section */
 .tips {
   margin: 28px 0;
@@ -819,6 +834,61 @@ body::after {
 .tips .bullets li {
   font-size: 16px;
   line-height: 1.6;
+}
+
+/* Numbered instructions, one step per row */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  counter-reset: step-number;
+}
+
+.steps li {
+  counter-increment: step-number;
+  position: relative;
+  padding-left: 44px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.steps li::before {
+  content: counter(step-number);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--button-gradient);
+  color: var(--night);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Quote with its source */
+.quote {
+  margin: 32px 0 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--violet);
+  border-radius: 0 16px 16px 0;
+  background: rgba(138, 111, 179, 0.14);
+}
+
+.quote blockquote { margin: 0; }
+
+.article__section .quote p {
+  margin: 0 0 12px;
+  color: var(--text);
+}
+
+.quote figcaption {
+  color: var(--muted-2);
+  font-size: 14px;
 }
 
 .examples {
