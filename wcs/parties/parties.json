@@ -156,6 +156,22 @@
     ]
   },
   {
+    "id": "simf",
+    "name": "Симферополь",
+    "parties": [
+      {
+        "name": "Крендель и Пряник",
+        "links": [
+          {
+            "label": "VK",
+            "href": "https://vk.ru/wcssimferopol"
+          }
+        ],
+        "schedule": "раз в три недели по пятницам или субботам"
+      }
+    ]
+  },
+  {
     "id": "tomsk",
     "name": "Томск",
     "parties": [
