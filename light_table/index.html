@@ -43,5 +43,19 @@
       <span class="sr-only" id="selection-status" role="status"></span>
     </main>
   </div>
+  <dialog class="print-viewer" id="print-viewer" aria-labelledby="viewer-film viewer-medium">
+    <figure class="viewer-frame">
+      <button class="viewer-photo comparison-image" id="viewer-photo" type="button" aria-label="Hold to compare with the source photograph">
+        <img id="viewer-image" alt="">
+      </button>
+      <figcaption class="viewer-caption">
+        <span class="viewer-names">
+          <strong id="viewer-film"></strong>
+          <span id="viewer-medium"></span>
+        </span>
+        <button class="viewer-close" id="viewer-close" type="button" aria-label="Close preview" autofocus><span aria-hidden="true">×</span></button>
+      </figcaption>
+    </figure>
+  </dialog>
 </body>
 </html>

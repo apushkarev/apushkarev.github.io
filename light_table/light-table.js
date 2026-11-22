@@ -14,7 +14,13 @@
   const grid = document.getElementById('looks');
   const status = document.getElementById('selection-status');
   const photoName = document.getElementById('photo-name');
+  const viewer = document.getElementById('print-viewer');
+  const viewerPhoto = document.getElementById('viewer-photo');
+  const viewerImage = document.getElementById('viewer-image');
+  const viewerFilm = document.getElementById('viewer-film');
+  const viewerMedium = document.getElementById('viewer-medium');
   let photo = catalog.photos[0];
+  let opener;
 
   function asset(filename) {
     return 'generated/' + encodeURIComponent(photo.key) + '/' + encodeURIComponent(filename);
@@ -27,30 +33,53 @@
     return message;
   }
 
+  function openViewer(button, image, film, medium) {
+    opener = button;
+    viewerImage.width = catalog.width;
+    viewerImage.height = photo.height;
+    viewerImage.alt = image.alt;
+    viewerImage.src = image.src;
+    viewerFilm.textContent = film;
+    viewerMedium.textContent = medium;
+    // Show the selected print when the frame opens underneath a stationary pointer.
+    viewerPhoto.classList.add('just-opened');
+    viewer.showModal();
+  }
+
+  viewerPhoto.addEventListener('pointermove', () => viewerPhoto.classList.remove('just-opened'));
+  document.getElementById('viewer-close').addEventListener('click', () => viewer.close());
+  viewer.addEventListener('click', event => {
+    if (event.target === viewer) viewer.close();
+  });
+  viewer.addEventListener('close', () => {
+    opener?.focus({preventScroll: true});
+    opener = null;
+  });
+
   function showLooks() {
     const medium = catalog.media[select.selectedIndex];
     const cards = document.createDocumentFragment();
     grid.style.setProperty('--photo-ratio', catalog.width + ' / ' + photo.height);
+    document.body.style.setProperty('--source-preview', 'url("' + asset('source-' + catalog.width + '.jpg') + '")');
     for (const [index, look] of medium.looks.entries()) {
       const card = document.createElement('figure');
       card.className = 'look';
       const caption = document.createElement('figcaption');
       caption.textContent = look.name;
       if (look.status === 'valid') {
-        const link = document.createElement('a');
-        link.className = 'print-frame';
-        link.href = asset(look.key + '.jpg');
-        link.target = '_blank';
-        link.rel = 'noopener';
-        link.title = 'Open full-size preview';
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'print-frame comparison-image';
+        button.setAttribute('aria-haspopup', 'dialog');
         const image = new Image(catalog.width, photo.height);
         image.alt = photo.name + ' · ' + look.name + ' on ' + medium.name;
         image.loading = index < 3 ? 'eager' : 'lazy';
         image.decoding = 'async';
-        image.addEventListener('error', () => link.replaceWith(unavailable('Preview unavailable')), {once: true});
-        image.src = link.href;
-        link.append(image);
-        card.append(link);
+        image.addEventListener('error', () => button.replaceWith(unavailable('Preview unavailable')), {once: true});
+        image.src = asset(look.key + '.jpg');
+        button.addEventListener('click', () => openViewer(button, image, look.name, medium.name));
+        button.append(image);
+        card.append(button);
       } else {
         const labels = {missing: 'Awaiting a bake', stale: 'Rebake needed', invalidated: 'Bake invalidated'};
         card.append(unavailable(labels[look.status] || 'Preview unavailable'));
