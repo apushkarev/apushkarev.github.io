@@ -19,6 +19,9 @@
   const viewerImage = document.getElementById('viewer-image');
   const viewerFilm = document.getElementById('viewer-film');
   const viewerMedium = document.getElementById('viewer-medium');
+  // A completed export sets the time. Reloading the page reuses the same image URLs.
+  const printQuery = Number.isFinite(catalog.bakedAt)
+    ? '?t=' + new Date(catalog.bakedAt).getTime().toString(36) : '';
   let photo = catalog.photos[0];
   let opener;
 
@@ -76,7 +79,7 @@
         image.loading = index < 3 ? 'eager' : 'lazy';
         image.decoding = 'async';
         image.addEventListener('error', () => button.replaceWith(unavailable('Preview unavailable')), {once: true});
-        image.src = asset(look.key + '.jpg');
+        image.src = asset(look.key + '.jpg') + printQuery;
         button.addEventListener('click', () => openViewer(button, image, look.name, medium.name));
         button.append(image);
         card.append(button);
