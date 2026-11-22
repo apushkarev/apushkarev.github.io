@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#18191a">
+  <title>Light table · Trichromate</title>
+  <link rel="stylesheet" href="light-table.css">
+  <script defer src="generated/catalog.js"></script>
+  <script defer src="light-table.js"></script>
+</head>
+<body>
+  <header class="appbar">
+    <div class="identity">
+      <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="wordmark">Trichromate</span>
+      <h1>Light table</h1>
+    </div>
+    <div class="medium-control">
+      <label for="medium">Print medium</label>
+      <div class="select-wrap"><select id="medium"></select></div>
+    </div>
+  </header>
+  <div class="workspace">
+    <aside class="sources" aria-labelledby="sources-title">
+      <div class="pane-heading">
+        <h2 id="sources-title">Photographs</h2>
+        <span class="count" id="photo-count"></span>
+      </div>
+      <div class="filmstrip" id="filmstrip" role="radiogroup" aria-labelledby="sources-title"></div>
+    </aside>
+    <main class="comparison" aria-labelledby="photo-name">
+      <div class="comparison-heading">
+        <h2 id="photo-name">Film comparison</h2>
+        <span id="look-count"></span>
+      </div>
+      <div class="grid-scroll" tabindex="0" role="region" aria-label="Film previews">
+        <p class="notice" id="notice" hidden></p>
+        <noscript><p class="notice">Enable JavaScript to select a photograph and print medium.</p></noscript>
+        <div class="look-grid" id="looks"></div>
+      </div>
+      <span class="sr-only" id="selection-status" role="status"></span>
+    </main>
+  </div>
+</body>
+</html>
