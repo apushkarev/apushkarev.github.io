@@ -25,8 +25,9 @@
   let photo = catalog.photos[0];
   let opener;
 
-  function asset(filename) {
-    return 'generated/' + encodeURIComponent(photo.key) + '/' + encodeURIComponent(filename);
+  function asset(photo, filename, query = photo.sourceVersion ? '?v=' + photo.sourceVersion : '') {
+    const folder = photo.key.split('/').map(encodeURIComponent).join('/');
+    return 'generated/' + folder + '/' + encodeURIComponent(filename) + query;
   }
 
   function unavailable(text) {
@@ -63,7 +64,7 @@
     const medium = catalog.media[select.selectedIndex];
     const cards = document.createDocumentFragment();
     grid.style.setProperty('--photo-ratio', catalog.width + ' / ' + photo.height);
-    document.body.style.setProperty('--source-preview', 'url("' + asset('source-' + catalog.width + '.jpg') + '")');
+    document.body.style.setProperty('--source-preview', 'url("' + asset(photo, 'source-' + catalog.width + '.jpg') + '")');
     for (const [index, look] of medium.looks.entries()) {
       const card = document.createElement('figure');
       card.className = 'look';
@@ -79,7 +80,7 @@
         image.loading = index < 3 ? 'eager' : 'lazy';
         image.decoding = 'async';
         image.addEventListener('error', () => button.replaceWith(unavailable('Preview unavailable')), {once: true});
-        image.src = asset(look.key + '.jpg') + printQuery;
+        image.src = asset(photo, look.key + '.jpg', printQuery);
         button.addEventListener('click', () => openViewer(button, image, look.name, medium.name));
         button.append(image);
         card.append(button);
@@ -124,7 +125,7 @@
     const thumbnail = new Image();
     thumbnail.alt = '';
     thumbnail.loading = 'lazy';
-    thumbnail.src = 'generated/' + encodeURIComponent(source.key) + '/source.jpg';
+    thumbnail.src = asset(source, 'source.jpg');
     frame.append(thumbnail);
     const name = document.createElement('span');
     name.className = 'source-name';
